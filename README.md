@@ -12,5 +12,6 @@ Enable https in localhost with OpenSSL for a NodeJS server
 **Type in Browser:** `thisisunsafe`
     
 chrome://flags\
+edge://flags\
     search flags: allow invalid certificates    (Enabled)
     
