@@ -2,8 +2,8 @@ const https = require('https')
 const fs = require('fs')
 
 const options = {
-    key: fs.readFileSync('key.pem'),
-    cert: fs.readFileSync('cert.pem')
+    key: fs.readFileSync('cert/key.pem'),
+    cert: fs.readFileSync('cert/cert.pem')
 }
 
 const requestListener = function (req, res) {
