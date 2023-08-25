@@ -2,13 +2,42 @@
 Enable https in localhost with OpenSSL for a NodeJS server
 
 ### Commands to generate certificate with OpenSSL
+
 ```cmd
-mkdir cert
-cd cert
-openssl genrsa -out key.pem
-openssl req -new -key key.pem -out csr.pem
-openssl x509 -req -days 9999 -in csr.pem -signkey key.pem -out cert.pem
-rm csr.pem
+mkdir cert && cd cert
+```
+```cmd
+openssl genrsa -aes256 -out ca-key.pem 4096
+```
+```cmd
+openssl req -new -x509 -sha256 -days 999 -key ca-key.pem -out ca.pem
+```
+```cmd
+openssl genrsa -out key.pem 4096
+```
+`CN=nodeserver | homeserver`
+```cmd
+openssl req -new -sha256 -subj "/CN=yourcn" -key key.pem -out cert.csr
+```
+`Get IPv4: ipconfig`
+
+`DNS:*.my-server.net | node.app.dev`
+```cmd
+echo "subjectAltName=DNS:your-dns.record,IP:00.00.00.00" >> extfile.cnf
+```
+```cmd
+openssl x509 -req -sha256 -days 999 -in cert.csr -CA ca.pem -CAkey ca-key.pem -out ca-cert.pem -extfile extfile.cnf -CAcreateserial
+```
+```cmd
+cat ca-cert.pem > cert.pem && cat ca.pem >> cert.pem
+```
+```cmd
+Start-Process pwsh.exe "-NoLogo -NoProfile" -Verb RunAs
+```
+```cmd
+Import-Certificate -FilePath "ca.pem" -CertStoreLocation Cert:\LocalMachine\Root
+```
+```cmd
 cd ..
 ```
 
