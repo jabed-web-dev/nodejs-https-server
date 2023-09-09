@@ -41,6 +41,10 @@ Import-Certificate -FilePath "ca.pem" -CertStoreLocation Cert:\LocalMachine\Root
 cd ..
 ```
 
+Files:\
+    `cert/cert.pem`\
+    `cert/key.pem`
+
 **run server:** `npm start`
 
 **Type in Browser:** `thisisunsafe`\
