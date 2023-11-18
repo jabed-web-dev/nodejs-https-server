@@ -55,5 +55,5 @@ Files:\
 &emsp; &emsp; **_or_**\
 chrome://flags\
 edge://flags\
-    search flags: allow invalid certificates    (Enabled)
+    search flags: webtransport-developer-mode (Enabled)
     
