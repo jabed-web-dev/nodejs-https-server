@@ -34,10 +34,14 @@ cat ca-cert.pem > cert.pem && cat ca.pem >> cert.pem
 ```cmd
 Start-Process pwsh.exe "-NoLogo -NoProfile" -Verb RunAs
 ```
+Enter this next line in the Administrator PowerShell ↓
 ```cmd
 Import-Certificate -FilePath "ca.pem" -CertStoreLocation Cert:\LocalMachine\Root
+exit
 ```
 ```cmd
+rm.exe ca.pem ca.srl ca-cert.pem ca-key.pem cert.csr extfile.cnf
+ls
 cd ..
 ```
 
