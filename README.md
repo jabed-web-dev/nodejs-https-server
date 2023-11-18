@@ -23,7 +23,7 @@ openssl req -new -sha256 -subj "/CN=yourcn" -key key.pem -out cert.csr
 
 `DNS:*.my-server.net | node.app.dev`
 ```cmd
-echo "subjectAltName=DNS:your-dns.record,IP:00.00.00.00" >> extfile.cnf
+echo "subjectAltName=DNS:your-dns.record,IP:0.0.0.0" >> extfile.cnf
 ```
 ```cmd
 openssl x509 -req -sha256 -days 999 -in cert.csr -CA ca.pem -CAkey ca-key.pem -out ca-cert.pem -extfile extfile.cnf -CAcreateserial
