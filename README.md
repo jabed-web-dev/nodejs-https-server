@@ -15,7 +15,7 @@ openssl req -new -x509 -sha256 -days 999 -key ca-key.pem -out ca.pem
 ```cmd
 openssl genrsa -out key.pem 4096
 ```
-`CN=nodeserver | homeserver`
+`CN=localserver | nodeserver`
 ```cmd
 openssl req -new -sha256 -subj "/CN=yourcn" -key key.pem -out cert.csr
 ```
