@@ -1,3 +1,4 @@
+```cmd
 mkdir cert && cd cert
 openssl genrsa -aes256 -out ca-key.pem 4096
 openssl req -new -x509 -sha256 -days 999 -key ca-key.pem -out ca.pem
@@ -10,3 +11,4 @@ Start-Process pwsh.exe "-NoLogo -NoProfile -Command `"Import-Certificate -FilePa
 rm.exe ca.pem ca.srl ca-cert.pem ca-key.pem cert.csr extfile.cnf
 ls
 cd ..
+```
