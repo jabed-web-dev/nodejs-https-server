@@ -26,9 +26,6 @@ echo "subjectAltName=DNS:your-dns.record,IP:0.0.0.0" >> extfile.cnf
 
 ```cmd
 openssl x509 -req -sha256 -days 999 -in cert.csr -CA ca.pem -CAkey ca-key.pem -out ca-cert.pem -extfile extfile.cnf -CAcreateserial
-```
-
-```cmd
 cat ca-cert.pem > cert.pem && cat ca.pem >> cert.pem
 ```
 
