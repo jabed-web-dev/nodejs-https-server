@@ -1,12 +1,13 @@
 {
-  "name": "https-server",
+  "name": "nodejs-https-server",
+  "description": "Enable HTTPS in localhost with OpenSSL for a NodeJS server",
   "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "type": "module",
+  "main": "server.js",
   "scripts": {
-    "start": "node app"
+    "start": "node server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": ["https", "nodejs", "server"],
+  "author": "Jabed Hossain",
+  "license": "MIT"
 }

@@ -1,5 +1,5 @@
 # nodejs-https-server
-Enable https in localhost with OpenSSL for a NodeJS server
+Enable HTTPS in localhost with OpenSSL for a NodeJS server
 
 ### Commands to generate a certificate with OpenSSL
 
@@ -30,7 +30,7 @@ Files:\
     `cert/cert.pem`\
     `cert/key.pem`
 
-**run server:** `npm start`
+**run server:** `npm start` or `node server.js`
 
 **Type in Browser:** `thisisunsafe`\
 &emsp; &emsp; **_or_**\
