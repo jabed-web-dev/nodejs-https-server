@@ -1,17 +1,19 @@
-const https = require('https')
-const fs = require('fs')
+import https from 'node:https';
+import fs from 'node:fs';
 
 const options = {
-    key: fs.readFileSync('cert/key.pem'),
-    cert: fs.readFileSync('cert/cert.pem')
-}
+  key: fs.readFileSync('cert/key.pem'),
+  cert: fs.readFileSync('cert/cert.pem'),
+};
 
-const requestListener = function (req, res) {
-    res.writeHead(200);
-    res.end('<h1>Hello World!</h1>');
-}
-// port: http = 80 | https = 443
-const server = https.createServer(options, requestListener);
-server.listen(5050, () => {
-    console.log('Server listening on 5050');
+const server = https.createServer(options, (req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Hello, Secure World!\n');
+});
+
+const PORT = 443;
+const HOST = 'node.app.dev';
+
+server.listen(PORT, HOST, () => {
+  console.log(`Server running at https://${HOST}:${PORT}`);
 });
