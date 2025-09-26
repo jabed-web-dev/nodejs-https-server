@@ -15,6 +15,7 @@ openssl req -new -sha256 -subj "/CN=node.app.dev" -key key.pem -out cert.csr
 echo "subjectAltName=DNS:node.app.dev,IP:127.0.0.1" >> extfile.cnf
 openssl x509 -req -sha256 -days 999 -in cert.csr -CA ca.pem -CAkey ca-key.pem -out ca-cert.pem -extfile extfile.cnf -CAcreateserial
 cat ca-cert.pem > cert.pem && cat ca.pem >> cert.pem
+
 ```
 
 ```cmd
@@ -22,6 +23,7 @@ Start-Process pwsh.exe "-NoLogo -NoProfile -Command `"Import-Certificate -FilePa
 rm.exe ca.pem ca.srl ca-cert.pem ca-key.pem cert.csr extfile.cnf
 ls
 cd ..
+
 ```
 
 Files:\
